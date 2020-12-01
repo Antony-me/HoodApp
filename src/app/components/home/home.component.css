@@ -81,3 +81,32 @@
 .animate__animated.animate__fadeInUp {
   --animate-duration: 5s;
 }
+.services h1{
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    font-family: sans-serif;
+    margin-top: 4rem;
+}
+.service-cards{
+    margin-top: 3rem;
+}
+.service-cards .card{
+   height: 18rem;
+   border: 0.5px solid rgba(0, 0, 0, 0.2);
+   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.8);
+}
+.service-cards h5{
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.7);
+}
+.service-cards p{
+    font-size: 16px;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+.service-cards .card-subtitle{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
