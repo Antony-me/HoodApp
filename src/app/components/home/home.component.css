@@ -1,6 +1,6 @@
 .carousel-inner img {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   object-fit: cover;
   image-rendering: auto;
   image-rendering: crisp-edges;
@@ -32,7 +32,10 @@
   transition-duration: 0.7s;
   transition-property: opacity;
 }
-#myCarousel { width: 120px; margin: auto; }
+#myCarousel {
+  width: 120px;
+  margin: auto;
+}
 .carousel-fade .carousel-item.active,
 .carousel-fade .carousel-item-next.carousel-item-left,
 .carousel-fade .carousel-item-prev.carousel-item-right {
@@ -51,7 +54,7 @@
   transform: translate3d(0, 0, 0);
 }
 .carousel-caption {
-  margin-top: 15rem;
+  margin-top: 20rem;
   margin-left: -5rem;
   font-size: 20px;
   text-align: left;
@@ -60,4 +63,21 @@
   font-size: 60px;
   font-weight: bold;
   font-family: sans-serif;
+}
+.carousel-caption a button {
+  width: 160px;
+  height: 45px;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: bold;
+  border: 2px solid white;
+  outline: none;
+  background-color: transparent;
+  color: white;
+}
+.animate__animated.animate__fadeInDown {
+  --animate-duration: 5s;
+}
+.animate__animated.animate__fadeInUp {
+  --animate-duration: 5s;
 }
