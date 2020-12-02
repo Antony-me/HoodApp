@@ -109,10 +109,11 @@
   font-size: 40px;
   color: rgba(0, 0, 0, 0.7);
 }
-.service-cards p {
+.service-cards .card p {
   font-size: 16px;
   font-weight: normal;
   font-family: sans-serif;
+  text-align: left;
 }
 .service-cards .card-subtitle {
   font-size: 18px;
