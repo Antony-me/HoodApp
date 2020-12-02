@@ -9,8 +9,16 @@
 
 }
 
-.jumbotron{
+.jumbotron {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: row;
+   
+}
+
+.headings{
+    font-size: 15px;
+    font-weight: normal;
+    font-family: sans-serif;
+    color: #4e8cab;
 }
