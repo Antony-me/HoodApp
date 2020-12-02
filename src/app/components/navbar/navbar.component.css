@@ -17,8 +17,11 @@
 .navbar-brand {
   margin-left: 3rem;
   font-size: 28px;
-  font-weight: normal;
+  font-weight: bold;
   font-family: "Courier New", Courier, monospace;
+}
+.navbar-brand span {
+  color: #4e8cab;
 }
 .navbar-brand img {
   width: 60px;
@@ -39,7 +42,7 @@
   color: white;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.8);
 }
-.navbar ul li a button:hover{
+.navbar ul li a button:hover {
   opacity: 0.9;
   transition: 0.3s ease;
 }

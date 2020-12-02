@@ -76,10 +76,10 @@
   color: white;
 }
 .animate__animated.animate__fadeInDown {
-  --animate-duration: 5s;
+  --animate-duration: 3s;
 }
 .animate__animated.animate__fadeInUp {
-  --animate-duration: 5s;
+  --animate-duration: 3s;
 }
 .services h1 {
   text-align: center;
