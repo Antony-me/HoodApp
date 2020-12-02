@@ -163,3 +163,12 @@
   object-fit: cover;
   border: 1px solid rgba(64, 64, 64, 0.5);
 }
+.vacant-cards .card img:hover{
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
