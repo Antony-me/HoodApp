@@ -1,8 +1,10 @@
-.headr img{
+.headr {
     width: 100%;
     height: 852px;
+    background-image: url(../../../assets/images/real-estate-3116341_1920.jpg);
+    background-size: cover;
+    
 }
-
 .headr{
     padding: 0;
     margin: 0;
