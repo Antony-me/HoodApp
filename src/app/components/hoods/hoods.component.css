@@ -1,0 +1,24 @@
+.headr img{
+    width: 100%;
+    height: 852px;
+}
+
+.headr{
+    padding: 0;
+    margin: 0;
+
+}
+
+.jumbotron {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+   
+}
+
+.headings{
+    font-size: 15px;
+    font-weight: normal;
+    font-family: sans-serif;
+    color: #4e8cab;
+}
