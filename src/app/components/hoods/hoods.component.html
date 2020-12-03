@@ -6,12 +6,12 @@
   </div>
 <div class="jumbotron">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4" *ngFor="let hood of hoods">
         <div class="card mb-4" style="min-height:340px">
           <img src="../../../assets/images/langata.webp" class="card-img-top" alt="Hoodname">
           <div class="card-body">
-            <h5 class="card-title">Hood name<span class="ml-4">Hood count</span></h5>
-            <p class="card-text">Hood description</p>
+            <h5 class="card-title">{{ hood.name }}</h5>
+            <p class="card-text">{{ hood.location }}</p>
             <a href="" class="btn btn-primary btn-sm">Join Hood</a>
           </div>
         </div>
