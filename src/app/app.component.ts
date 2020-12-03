@@ -10,6 +10,7 @@ import { UserService } from './user.service';
 export class AppComponent {
   users = [];
   selectedUser;
+  hoods = [];
 
   constructor(private user: UserService) {
     this.getUsers();
