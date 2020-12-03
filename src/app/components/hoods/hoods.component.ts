@@ -10,29 +10,22 @@ import { HoodService } from 'src/app/hood.service';
 })
 export class HoodsComponent implements OnInit {
 
-  neighbourhood;
+  public hoods;
 
-  constructor(private hood: HoodService) { 
-    this.getneighbourhood();
-    this.neighbourhood = {id: -1, name: '' , location: '', count:0};
+  constructor(private hood: HoodService) { }
 
-
-
+  ngOnInit(){
+    this.getHoods();
   }
-  getneighbourhood = () => {
+
+  getHoods() {
     this.hood.getAllhoods().subscribe(
       data => {
-        this.hood = data;
-        console.log(data)
+        this.hoods = data;
       },
-      error => {
-        console.log(error);
-      }
-      
+      err => console.error(err),
+      () => console.log('done loading posts')
     );
-  }
-
-  ngOnInit(): void {
   }
 
 }
