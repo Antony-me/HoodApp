@@ -8,7 +8,7 @@ import { UserService } from './user.service';
   providers: [UserService]
 })
 export class AppComponent {
-  users = "";
+  users = [];
   selectedUser;
 
   constructor(private user: UserService) {
@@ -19,6 +19,30 @@ export class AppComponent {
     this.user.getAllUsers().subscribe(
       data => {
         this.users = data;
+        console.log(data)
+      },
+      error => {
+        console.log(error);
+      }
+      
+    );
+  }
+  getUser = (user) => {
+    this.user.getOneUser(user.id).subscribe(
+      data => {
+        this.selectedUser = data;
+        console.log(data)
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  AddUser = () => {
+    this.user.AddUser(this.selectedUser).subscribe(
+      data => {
+        this.users.push(data);
         console.log(data)
       },
       error => {

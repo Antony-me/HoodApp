@@ -13,7 +13,16 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  signupUser(): Observable<any> {
+  getAllUsers(): Observable<any> {
     return this.http.get(this.baseurl + '/auth/login/');
+  }
+  
+  getOneUser(id): Observable<any> {
+    return this.http.get(this.baseurl + '/api/v1/users/' + id);
+  }
+
+  AddUser(user): Observable<any> {
+    const body = {username: '' , email: ''};
+    return this.http.get(this.baseurl + '/auth/login/', user)
   }
 }

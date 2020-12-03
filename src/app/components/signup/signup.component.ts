@@ -16,10 +16,19 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(){
     this.signup = {
-      username:"",
       email:"",
+      username:"",
+      is_staff: false,
       password:""
     }
   }
 
+  signupUser(){
+    this.UserService.AddUser(this.signup).subscribe(
+      response => {
+        alert('user' + this.signup.username + 'has been created')
+      },
+      error => console.log('error', error)
+    )
+  }
 }
