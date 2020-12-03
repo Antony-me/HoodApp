@@ -9,12 +9,14 @@ import { Observable } from 'rxjs';
 export class HoodService {
 
   baseurl = "https://hoodapplication.herokuapp.com";
+  httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   
 
   constructor(private http: HttpClient) { }
 
   getAllhoods(): Observable<any> {
-    return this.http.get(this.baseurl + '/hoods/');
+    return this.http.get(this.baseurl + '/hoods/',
+    {headers: this.httpHeaders})
   }
 }
   
