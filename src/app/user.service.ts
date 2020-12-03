@@ -22,7 +22,7 @@ export class UserService {
   }
 
   AddUser(user): Observable<any> {
-    const body = {username: '' , email: ''};;
+    const body = {username: '' , email: ''};
     return this.http.post(this.baseurl + '/users/' + user.id + '/', body,)
   }
 }
