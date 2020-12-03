@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   baseurl = "https://hoodapplication.herokuapp.com";
+  httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   
 
   constructor(private http: HttpClient) { }
@@ -23,6 +24,7 @@ export class UserService {
 
   AddUser(user): Observable<any> {
     const body = {username: '' , email: ''};
-    return this.http.post(this.baseurl + '/auth/signup/' , body,)
+    return this.http.post(this.baseurl + '/auth/signup/' , body,
+    {headers: this.httpHeaders});
   }
 }

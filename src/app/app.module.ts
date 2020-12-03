@@ -27,7 +27,8 @@ import { LoginComponent } from './components/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
