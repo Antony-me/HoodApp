@@ -13,13 +13,13 @@ export class HoodsComponent implements OnInit {
   neighbourhood;
 
   constructor(private hood: HoodService) { 
-    this.getneighbourhood();
+    this.getNeighbourhoods();
     this.neighbourhood = {id: -1, name: '' , location: '', count:0};
 
 
 
   }
-  getneighbourhood = () => {
+  getNeighbourhoods = () => {
     this.hood.getAllhoods().subscribe(
       data => {
         this.hood = data;

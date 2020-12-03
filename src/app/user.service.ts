@@ -22,9 +22,16 @@ export class UserService {
     return this.http.get(this.baseurl + '/api/v1/users/' + id);
   }
 
+
+  updateUser(user): Observable<any> {
+    const body = {username: '' , email: ''};
+    return this.http.put(this.baseurl + '/users/' + user.id + '/', body,
+    {headers: this.httpHeaders});
+  }
+
   AddUser(user): Observable<any> {
     const body = {username: '' , email: ''};
-    return this.http.get(this.baseurl + '/auth/login/', user)
+    // return this.http.get(this.baseurl + '/auth/login/', user)
     return this.http.post(this.baseurl + '/auth/signup/' , body,
     {headers: this.httpHeaders});
   }
