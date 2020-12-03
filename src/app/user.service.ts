@@ -24,6 +24,7 @@ export class UserService {
 
   AddUser(user): Observable<any> {
     const body = {username: '' , email: ''};
+    return this.http.get(this.baseurl + '/auth/login/', user)
     return this.http.post(this.baseurl + '/auth/signup/' , body,
     {headers: this.httpHeaders});
   }

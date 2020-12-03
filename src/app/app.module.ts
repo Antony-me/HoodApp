@@ -11,6 +11,7 @@ import { HoodsComponent } from './components/hoods/hoods.component';
 import { MarketComponent } from './components/market/market.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { LoginComponent } from './components/login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
