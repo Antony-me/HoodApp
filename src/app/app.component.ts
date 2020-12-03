@@ -1,10 +1,29 @@
 import { Component } from '@angular/core';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [UserService]
 })
 export class AppComponent {
-  title = 'Hoodapp';
+  users = "";
+  selectedUser;
+
+  constructor(private user: UserService) {
+    this.getUsers();
+    this.selectedUser = {id: -1, username: '' , email: ''};
+  }
+  getUsers = () => {
+    this.user.getAllUsers().subscribe(
+      data => {
+        this.users = data;
+        console.log(data)
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 }
