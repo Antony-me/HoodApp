@@ -39,8 +39,18 @@ export class AppComponent {
       }
     );
   }
+  updateUser = () => {
+    this.user.updateUser(this.selectedUser).subscribe(
+      data => {
+        this.getUsers();
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 
-  AddUser = () => {
+  createUser = () => {
     this.user.AddUser(this.selectedUser).subscribe(
       data => {
         this.users.push(data);
