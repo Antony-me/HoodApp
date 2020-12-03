@@ -16,4 +16,13 @@ export class UserService {
   getAllUsers(): Observable<any> {
     return this.http.get(this.baseurl + '/auth/login/');
   }
+  
+  getOneUser(id): Observable<any> {
+    return this.http.get(this.baseurl + '/api/v1/users/' + id);
+  }
+
+  AddUser(user): Observable<any> {
+    const body = {username: '' , email: ''};;
+    return this.http.post(this.baseurl + '/users/' + user.id + '/', body,)
+  }
 }
