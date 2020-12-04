@@ -24,7 +24,7 @@ export class HoodsComponent implements OnInit {
         this.hoods = data;
       },
       err => console.error(err),
-      () => console.log('done loading posts')
+      () => console.log('done loading hoods')
     );
   }
 
