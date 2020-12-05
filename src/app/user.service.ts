@@ -8,26 +8,30 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   baseurl = "https://hoodapplication.herokuapp.com";
+  httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   
-
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<any> {
-    return this.http.get(this.baseurl + '/auth/login/');
+    return this.http.get(this.baseurl + '/auth/login/',
+    {headers: this.httpHeaders}
+    );
   }
   
   getOneUser(id): Observable<any> {
-    return this.http.get(this.baseurl + '/api/v1/users/' + id);
+    return this.http.get(this.baseurl + '/api/v1/users/' + id,
+    {headers: this.httpHeaders}
+    );
   }
 
 
   updateUser(user): Observable<any> {
     const body = {username: '' , email: ''};
-    return this.http.post(this.baseurl + '/users/', user)
+    return this.http.put(this.baseurl + '/users/' + user.id + '/', body);
   }
 
   AddUser(user): Observable<any> {
-    const body = {username: '' , email: ''};
-    return this.http.post(this.baseurl + '/auth/signup/', user)
+    return this.http.post(this.baseurl + '/auth/signup/', {username: '' , email: '', password:'' },
+    {headers: this.httpHeaders})
   }
 }

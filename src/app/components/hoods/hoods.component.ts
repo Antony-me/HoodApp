@@ -22,6 +22,8 @@ export class HoodsComponent implements OnInit {
     this.hood.getAllhoods().subscribe(
       data => {
         this.hoods = data;
+        console.log(data);
+        
       },
       err => console.error(err),
       () => console.log('done loading hoods')
