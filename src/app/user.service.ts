@@ -10,9 +10,6 @@ export class UserService {
   baseurl = "https://hoodapplication.herokuapp.com";
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   
-
-  
-
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<any> {
