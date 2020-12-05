@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Hoodapp"
+    }
+  },
+  "defaultProject": "Hoodapp",
+  "cli": {
+    "analytics": false
+  }
 }
