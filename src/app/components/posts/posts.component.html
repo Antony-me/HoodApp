@@ -52,11 +52,27 @@
     </div>
     <div class="five wide column">
         <div class="ui segment">
-                 
-            <form action="" method="POST" class='ui form' enctype="multipart/form-data">
-                <input type="text" name="" value="">
-      
-                <button type='submit' name="" class="ui positive button w-full mt-5" > Send</button>
+            <form id="get-form" class="form" method="POST">
+                <div class="form-group">
+                    <input [(ngModel)]="newPost.description" type="description"   class="form-control" name="description" id="description" autocomplete="off" placeholder=" "
+                        required />
+                    <label for="description" class="label-description">
+                        <span class="content-description">Post</span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <input [(ngModel)]="newPost.categories" type="text"  class="form-control" name="categories" id="categories" autocomplete="off"
+                        placeholder=" " required />
+                    <label   for="categories" class="label-username">
+                        <span class="content-categories">categories</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="newPost.post_image" type="file" (change)='onFileSelected($event)'class="form-control" name="categories" >
+                </div>
+
+                <button class="btn btn-sm btn-success" (click)='createPost()'>Post</button>
             </form>
         </div>
     </div>
