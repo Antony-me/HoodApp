@@ -12,6 +12,7 @@ import { MarketComponent } from './components/market/market.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { PostsComponent } from './components/posts/posts.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     HoodsComponent,
     MarketComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
