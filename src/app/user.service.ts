@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -24,8 +23,7 @@ export class UserService {
 
   updateUser(user): Observable<any> {
     const body = {username: '' , email: ''};
-    return this.http.put(this.baseurl + '/users/' + user.id + '/', body,
-    {headers: this.httpHeaders});
+    return this.http.post(this.baseurl + '/users/', user)
   }
 
   AddUser(user): Observable<any> {
