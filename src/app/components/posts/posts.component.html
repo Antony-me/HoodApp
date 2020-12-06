@@ -4,30 +4,29 @@
     crossorigin="anonymous" />
 </header>
 <div class="container">
-        <div class="ui segment">
-          <form id="get-form" class="form" method="POST">
-              <h4>Add your Post</h4>
-            <div class="form-group">
-              <textarea rows="4"  [(ngModel)]="newPost.description" type="description" class="form-control" name="description"
-                id="description" autocomplete="off" placeholder=" " required> </textarea>
-              <label for="description" class="label-description">
-                <span class="content-description">Post</span>
-              </label>
-            </div>
-            <div class="form-group">
-              <input [(ngModel)]="newPost.categories" type="text" class="form-control" name="categories" id="categories"
-                autocomplete="off" placeholder=" " required />
-              <label for="categories" class="label-categories">
-                <span class="content-categories">categories</span>
-              </label>
-            </div>
-            <div class="form-group">
-              <input [(ngModel)]="newPost.post_image" type="file" (change)='onFileSelected($event)' class="form-control"
-                name="categories">
-            </div>
-            <button class="btn btn-sm btn-success" (click)='createPost()'>Post</button>
-          </form>
-        </div>
+  <div class="ui segment">
+    <form id="get-form" class="form" method="POST">
+      <h4>Add your Post</h4>
+      <div class="form-group">
+        <textarea rows="4" [(ngModel)]="newPost.description" type="description" class="form-control" name="description"
+          id="description" autocomplete="off" placeholder=" " required> </textarea>
+        <label for="description" class="label-description">
+          <span class="content-description">Post</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <input [(ngModel)]="newPost.categories" type="text" class="form-control" name="categories" id="categories"
+          autocomplete="off" placeholder=" " required />
+        <label for="categories" class="label-categories">
+          <span class="content-categories">categories</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <input [(ngModel)]="newPost.post_image" type="file" class="form-control" name="post_image">
+      </div>
+      <button class="btn btn-sm btn-success" (click)='createPost()'>Post</button>
+    </form>
+  </div>
   <div class="ui grid responsive">
     <div *ngFor="let post of posts" class="eleven wide column">
       <div class="ui fluid card">
@@ -38,7 +37,7 @@
         </div>
         <div class="ui fluid">
           <h6><em>Category:{{post.categories}}</em> </h6> <br>
-          <img src="{{post.post_image.slice(13)}}" alt="img">
+          <img src="{{post.post_image.slice(13)}}" alt="img" id="postic">
         </div>
         <div class="content">
           <p>{{post.description}}</p>

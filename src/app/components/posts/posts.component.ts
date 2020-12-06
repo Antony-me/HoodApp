@@ -11,18 +11,10 @@ import { PostService } from 'src/app/post.service';
 export class PostsComponent implements OnInit {
   posts=[];
   selectedPost;
-  post_image = null;
   newPost;
-
-  onFileSelected(event){
-    console.log(event);
-    this.post_image= event.target.files[0]
-    
-  }
 
   constructor(private PostService: PostService) { }
 
- 
   ngOnInit(){
     this.newPost = {
       description:"",
@@ -45,11 +37,9 @@ export class PostsComponent implements OnInit {
   }
   
   createPost(){
-    // console.log(this.newPost);
+    console.log(this.newPost);
     this.PostService.AddPost(this.newPost).subscribe(
       response => {
-        
-        
         alert('Your post has been updated')
       },
       error => console.log('error', error)
