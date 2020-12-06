@@ -9,7 +9,8 @@ import { PostService } from 'src/app/post.service';
   providers: [PostService]
 })
 export class PostsComponent implements OnInit {
-  public posts;
+  posts=[];
+  selectedPost;
   post_image = null;
   newPost;
 
@@ -27,13 +28,16 @@ export class PostsComponent implements OnInit {
       description:"",
       categories:"",
       post_image:""
-    }    
+    }   
+    this.getPosts();
+    this.selectedPost = {id: -1, description: '' , category: '', post_image:''}; 
   }
 
   getPosts() {
     this.PostService.getAllPosts().subscribe(
       data => {
         this.posts = data;
+        console.log(data);
       },
       err => console.error(err),
       () => console.log('done loading posts')
@@ -44,7 +48,7 @@ export class PostsComponent implements OnInit {
     // console.log(this.newPost);
     this.PostService.AddPost(this.newPost).subscribe(
       response => {
-        console.log(response);
+        
         
         alert('Your post has been updated')
       },
