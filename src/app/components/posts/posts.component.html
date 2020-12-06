@@ -17,10 +17,8 @@
 
           </div>
           <div class="ui fluid">
-              <small>Category:{{post.categories}}</small>
-              
-              <img src="{{post.post_image}}" alt="">
-
+            <small>Category:{{post.categories}}</small> <br>
+            <img src="{{post.post_image.slice(13)}}" alt="img">
           </div>
           <div class="content">
             <p>{{post.description}}</p>
