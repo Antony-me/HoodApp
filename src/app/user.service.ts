@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  baseurl = "https://hoodapplication.herokuapp.com";
+  baseurl = "https://hoodappx255.herokuapp.com";
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   
 
@@ -17,7 +17,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<any> {
-    return this.http.get(this.baseurl + '/auth/login/',
+    return this.http.get(this.baseurl + '/login/',
     {headers: this.httpHeaders}
     );
   }
