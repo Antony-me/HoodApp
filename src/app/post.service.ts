@@ -18,7 +18,7 @@ export class PostService {
     );
   }
   AddPost(nwPost): Observable<any> {
-    return this.http.post(this.baseurl + '/api/v1/posted/', nwPost,
+    return this.http.post(this.baseurl + '/hoods/', nwPost,
     {headers: this.httpHeaders})
   }
 }

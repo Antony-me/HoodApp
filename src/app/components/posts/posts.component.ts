@@ -30,7 +30,7 @@ export class PostsComponent implements OnInit {
     this.PostService.getAllPosts().subscribe(
       data => {
         this.posts = data[0].post_set;
-        console.log(this.posts);
+        // console.log(this.posts);
         
       },
       err => console.error(err),
