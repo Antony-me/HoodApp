@@ -10,6 +10,7 @@ import { PostService } from 'src/app/post.service';
 })
 export class PostsComponent implements OnInit {
   posts=[];
+  
   selectedPost;
   newPost;
 
@@ -28,8 +29,9 @@ export class PostsComponent implements OnInit {
   getPosts() {
     this.PostService.getAllPosts().subscribe(
       data => {
-        this.posts = data;
-        console.log(data);
+        this.posts = data[0].post_set;
+        console.log(this.posts);
+        
       },
       err => console.error(err),
       () => console.log('done loading posts')

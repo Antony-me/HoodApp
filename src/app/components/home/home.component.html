@@ -78,7 +78,7 @@
             </div>
             <div class="vacant-cards">
                 <div class="card" style="width: 22rem;" *ngFor="let vacant of vacants.slice(0, 3);">
-                    <img src="{{ vacant.vacant_house_pic.url }}" class="card-img-top" alt="...">
+                    <img src="http://res.cloudinary.com/sawedee/{{ vacant.vacant_house_pic.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ vacant.location}}</h5>
                         <div class="row">
