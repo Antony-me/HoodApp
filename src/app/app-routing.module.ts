@@ -5,6 +5,9 @@ import { HoodsComponent } from './components/hoods/hoods.component';
 import { LoginComponent } from './components/login/login.component';
 import { MarketComponent } from './components/market/market.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { PostsComponent } from './components/posts/posts.component';
+
+
 
 const routes: Routes = [
   {
@@ -26,6 +29,10 @@ const routes: Routes = [
   {
     path:'login',
     component:LoginComponent
+  },
+  {
+    path:'posts',
+    component:PostsComponent
   }
 ];
 

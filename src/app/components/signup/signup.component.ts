@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit {
     private signupService: SignupService,
     private router: Router) { }
 
+
   ngOnInit(){
     this.signup = {
       email:"",
@@ -46,6 +47,9 @@ export class SignupComponent implements OnInit {
       response => {
         alert('user ' + this.signup.username + ' has been created')
         this.router.navigate(['/login'])
+
+        alert('user'  + this.signup.username +  'has been created');
+        this.router.navigate(['/login']);
       },
       error => console.log('error', error)
     )

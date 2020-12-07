@@ -9,25 +9,44 @@ import { PostService } from 'src/app/post.service';
   providers: [PostService]
 })
 export class PostsComponent implements OnInit {
+  posts=[];
+  
+  selectedPost;
+  newPost;
 
-  public posts;
-
-  constructor(private post: PostService) { }
+  constructor(private PostService: PostService) { }
 
   ngOnInit(){
-    this.getposts();
+    this.newPost = {
+      description:"",
+      categories:"",
+      post_image:""
+    }   
+    this.getPosts();
+    this.selectedPost = {id: -1, description: '' , category: '', post_image:''}; 
   }
 
-  getposts() {
-    this.post.getAllPosts().subscribe(
+  getPosts() {
+    this.PostService.getAllPosts().subscribe(
       data => {
-        this.posts = data;
-        console.log(data);
+        this.posts = data[0].post_set;
+        // console.log(this.posts);
         
       },
       err => console.error(err),
       () => console.log('done loading posts')
     );
   }
+  
+  createPost(){
+    console.log(this.newPost);
+    this.PostService.AddPost(this.newPost).subscribe(
+      response => {
+        alert('Your post has been updated')
+      },
+      error => console.log('error', error)
+    )
+  }
+
 
 }

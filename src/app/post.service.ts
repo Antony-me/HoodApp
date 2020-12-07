@@ -7,14 +7,18 @@ import { Observable } from 'rxjs';
 })
 export class PostService {
 
-  baseurl = "https://hoodapplication.herokuapp.com";
+  baseurl = "https://hoodappx255.herokuapp.com";
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   
   constructor(private http: HttpClient) { }
 
   getAllPosts(): Observable<any> {
-    return this.http.get(this.baseurl + '/api/v1/post/',
+    return this.http.get(this.baseurl + '/hoods/',
     {headers: this.httpHeaders}
     );
+  }
+  AddPost(nwPost): Observable<any> {
+    return this.http.post(this.baseurl + '/hoods/', nwPost,
+    {headers: this.httpHeaders})
   }
 }

@@ -37,3 +37,6 @@ import { PostsComponent } from './components/posts/posts.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
