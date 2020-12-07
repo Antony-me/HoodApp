@@ -46,3 +46,11 @@
   opacity: 0.9;
   transition: 0.3s ease;
 }
+.dropdown img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.dropdown{
+  margin-right: 5rem;
+}
