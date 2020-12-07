@@ -31,7 +31,6 @@ export class PostsComponent implements OnInit {
       data => {
         this.posts = data[0].post_set;
         // console.log(this.posts);
-        
       },
       err => console.error(err),
       () => console.log('done loading posts')

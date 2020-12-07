@@ -21,8 +21,6 @@ export class UserService {
   loginHere(user): Observable<any> {
     return this.http.post(this.baseurl + '/login/',  user
     // {headers: this.httpHeaders},
-    return this.http.get(this.baseurl + '/auth/login/',
-      { headers: this.httpHeaders }
 
     );
   }
