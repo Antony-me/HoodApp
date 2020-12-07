@@ -27,6 +27,12 @@
                         <span class="content-password1">Password</span>
                     </label>
                 </div>
+                <div class="form-group">
+                    <select class="browser-default custom-select" [(ngModel)]="signup.neighborhood" name="neighborhood">
+                        <option *ngFor="let hood of hoods" [(value)]="hood.id">{{hood.name}}</option>
+    
+                    </select>
+                </div>
 
                 <button (click)='signupUser()'>SignUp</button>
             </form>
