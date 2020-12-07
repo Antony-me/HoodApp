@@ -17,8 +17,13 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<any> {
-    return this.http.get(this.baseurl + '/login/',
-    {headers: this.httpHeaders}
+    return this.http.get(this.baseurl + '/login/', 
+    {headers: this.httpHeaders},
+    );
+  }
+  loginHere(user): Observable<any> {
+    return this.http.post(this.baseurl + '/login/',  user
+    // {headers: this.httpHeaders},
     );
   }
   
