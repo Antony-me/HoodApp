@@ -1,28 +1,14 @@
 <div class="container-fluid" style="padding: 0; margin: 0;">
     <div id="carouselExampleControls" class="carousel slide carousel-fade" data-interval="20000" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="/assets/images/hudu1.jpg" class="d-block w-100" alt="slide1">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="animate__animated animate__fadeInDown">Hudu Vacant 1</h5>
-                    <p class="animate__animated animate__fadeInUp">Your guaranteed hoodwatch</p>
-                    <a href="" class="animate__animated animate__fadeInUp"><button>RESERVE NOW</button></a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="/assets/images/hudu2.jpg" class="d-block w-100" alt="slide2">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="animate__animated animate__fadeInDown">Hudu Vacant 2</h5>
-                    <p class="animate__animated animate__fadeInUp">Your guaranteed hoodwatch</p>
-                    <a href=""><button>RESERVE NOW</button></a>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/images/hudu3.jpg" class="d-block w-100" alt="slide3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="animate__animated animate__fadeInDown">Hudu Vacant 3</h5>
-                    <p class="animate__animated animate__fadeInUp">Your guaranteed hoodwatch</p>
-                    <a href=""><button>RESERVE NOW</button></a>
+            <div *ngFor="let vacant of vacants">
+                <div class="carousel-item {% if forloop.first %} active{% endif %}">
+                    <img src="{{ vacant.vacant_house_pic.url}}" class="d-block w-100" alt="slide1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="animate__animated animate__fadeInDown">Hudu Vacant 1</h5>
+                        <p class="animate__animated animate__fadeInUp">Your guaranteed hoodwatch</p>
+                        <a href="" class="animate__animated animate__fadeInUp"><button>RESERVE NOW</button></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,57 +78,25 @@
                 </div>
             </div>
             <div class="vacant-cards">
-                <div class="card" style="width: 22rem;">
-                    <img src="/assets/images/hudu1.jpg" class="card-img-top" alt="...">
+                <div class="card" style="width: 22rem;" *ngFor="let vacant of vacants.slice(0, 3);">
+                    <img src="{{ vacant.vacant_house_pic.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Langata Barracks</h5>
+                        <h5 class="card-title">{{ vacant.location}}</h5>
                         <div class="row">
                             <div class="col-md-4">
-                                <p><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<span>1</span>&nbsp;Room</p>
+                                <p><i class="fa fa-home"
+                                        aria-hidden="true"></i>&nbsp;<span>{{ vacant.vacant_house_rooms }}</span>&nbsp;Room
+                                </p>
                             </div>
                             <div class="col-md-4">
-                                <p><i class="fa fa-bed" aria-hidden="true"></i>&nbsp;<span>2</span>&nbsp;Bed</p>
+                                <p><i class="fa fa-bed"
+                                        aria-hidden="true"></i>&nbsp;<span>{{ vacant.vacant_house_bedrooms }}</span>&nbsp;Bed
+                                </p>
                             </div>
                             <div class="col-md-4">
-                                <p><i class="fa fa-bath" aria-hidden="true"></i>&nbsp;<span>4</span>&nbsp;Bath</p>
-                            </div>
-                        </div>
-                        <a href="#"><button>VIEW DETAILS</button></a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 22rem;">
-                    <img src="/assets/images/hudu2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">South B</h5>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <p><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<span>1</span>&nbsp;Room</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p><i class="fa fa-bed" aria-hidden="true"></i>&nbsp;<span>2</span>&nbsp;Bed</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p><i class="fa fa-bath" aria-hidden="true"></i>&nbsp;<span>4</span>&nbsp;Bath</p>
-                            </div>
-                        </div>
-                        <a href="#"><button>VIEW DETAILS</button></a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 22rem;">
-                    <img src="/assets/images/hudu3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Westlands</h5>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <p><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<span>1</span>&nbsp;Room</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p><i class="fa fa-bed" aria-hidden="true"></i>&nbsp;<span>2</span>&nbsp;Bed</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p><i class="fa fa-bath" aria-hidden="true"></i>&nbsp;<span>4</span>&nbsp;Bath</p>
+                                <p><i class="fa fa-bath"
+                                        aria-hidden="true"></i>&nbsp;<span>{{ vacant.vacant_house_bathrooms }}</span>&nbsp;Bath
+                                </p>
                             </div>
                         </div>
                         <a href="#"><button>VIEW DETAILS</button></a>
