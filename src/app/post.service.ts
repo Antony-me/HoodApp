@@ -13,12 +13,12 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getAllPosts(): Observable<any> {
-    return this.http.get(this.baseurl + '/api/v1/posted/',
+    return this.http.get(this.baseurl + '/hoods/',
     {headers: this.httpHeaders}
     );
   }
   AddPost(nwPost): Observable<any> {
-    return this.http.post(this.baseurl + '/api/v1/posted/', nwPost,
+    return this.http.post(this.baseurl + '/hoods/', nwPost,
     {headers: this.httpHeaders})
   }
 }

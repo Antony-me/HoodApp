@@ -28,8 +28,8 @@
     </form>
   </div>
   <div class="ui grid responsive">
-    <div *ngFor="let post of posts" class="eleven wide column">
-      <div class="ui fluid card">
+    <div class="eleven wide column">
+      <div class="ui fluid card" *ngFor="let post of posts">
         <div class="content">
           <div class="right floated meta">
           </div>
@@ -37,7 +37,7 @@
         </div>
         <div class="ui fluid">
           <h6><em>Category:{{post.categories}}</em> </h6> <br>
-          <img src="{{post.post_image.slice(13)}}" alt="img" id="postic">
+          <img src="{{post.post_image}}" alt="img" id="postic">
         </div>
         <div class="content">
           <p>{{post.description}}</p>
