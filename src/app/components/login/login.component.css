@@ -55,7 +55,7 @@
   padding-top: 20px;
   bottom: 3px;
 }
-.registration-form input[type="submit"] {
+.registration-form button{
   margin-top: 0.5rem;
   margin-bottom: 3rem;
   width: 100%;
