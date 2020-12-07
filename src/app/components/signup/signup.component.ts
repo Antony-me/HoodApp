@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { SignupService } from 'src/app/signup.service';
 import { Viewhood } from 'src/app/viewhood'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -15,13 +16,14 @@ export class SignupComponent implements OnInit {
   signup;
 
   constructor(private UserService:UserService, 
-    private signupService: SignupService) { }
+    private signupService: SignupService,
+    private router: Router) { }
 
   ngOnInit(){
     this.signup = {
       email:"",
       username:"",
-      is_staff: false,
+      is_staff: true,
       password:"",
       neighborhood:1
     }
@@ -43,6 +45,7 @@ export class SignupComponent implements OnInit {
     this.UserService.AddUser(this.signup).subscribe(
       response => {
         alert('user ' + this.signup.username + ' has been created')
+        this.router.navigate(['/login'])
       },
       error => console.log('error', error)
     )
