@@ -1,26 +1,28 @@
 <div class="container-fluid" style="padding: 0; margin: 0;">
-    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" *ngFor="let vacant of vacants;let index = index"
-                [attr.data-slide-to]="index"></li>
-        </ol>
+    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-interval="20000" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item" *ngFor="let vacant of vacants;let index = index;let isFirst = first"
                 [ngClass]="{active:isFirst}">
-                <img src="https://res.cloudinary.com/dkjgiy5va/{{vacant.vacant_house_pic}}" class="d-block w-100" [alt]="vacant.vacant_house_pic">
+                <img src="https://res.cloudinary.com/dkjgiy5va/{{vacant.vacant_house_pic}}" class="d-block w-100"
+                    [alt]="vacant.vacant_house_pic">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5 [textContent]="vacant.location"></h5>
+                    <h5 class="animate__animated animate__fadeInDown">{{ vacant.vacant_house_location}}</h5>
+                    <p class="animate__animated animate__fadeInUp">Your guaranteed hoodwatch</p>
+                    <a href="" class="animate__animated animate__fadeInUp"><button>RESERVE NOW</button></a>
                 </div>
             </div>
+
+            <a class="carousel-control-prev carousel-control" id="myCarousel" href="#carouselExampleControls"
+                role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next carousel-control" id="myCarousel" href="#carouselExampleControls"
+                role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon carousel-control" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon carousel-control" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
 
     <div class="container">
@@ -33,7 +35,8 @@
                         <div class="card-body">
                             <h5 class="card-title"><i class="fa fa-home" aria-hidden="true"></i></h5>
                             <h6 class="card-subtitle mb-2">FIND YOUR DREAM HOME FAST</h6>
-                            <p class="card-text">Avoid the hustle of looking for a home, <strong>Hudu</strong> has got
+                            <p class="card-text">Avoid the hustle of looking for a home, <strong>Hudu</strong> has
+                                got
                                 you covered, create an account and find your dream home fast.</p>
                         </div>
                     </div>
@@ -78,7 +81,8 @@
             </div>
             <div class="vacant-cards">
                 <div class="card" style="width: 22rem;" *ngFor="let vacant of vacants.slice(0, 3);">
-                    <img src="https://res.cloudinary.com/dkjgiy5va/{{ vacant.vacant_house_pic }}" class="card-img-top" alt="...">
+                    <img src="https://res.cloudinary.com/dkjgiy5va/{{ vacant.vacant_house_pic }}" class="card-img-top"
+                        alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ vacant.vacant_house_location}}</h5>
                         <div class="row">
