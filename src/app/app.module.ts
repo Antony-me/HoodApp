@@ -13,6 +13,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { PostsComponent } from './components/posts/posts.component';
+import { AuthGuard } from './guards/auth.guard';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { PostsComponent } from './components/posts/posts.component';
     MarketComponent,
     SignupComponent,
     LoginComponent,
-    PostsComponent
+    PostsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { PostsComponent } from './components/posts/posts.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
