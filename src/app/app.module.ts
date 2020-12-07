@@ -11,7 +11,7 @@ import { HoodsComponent } from './components/hoods/hoods.component';
 import { MarketComponent } from './components/market/market.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostsComponent } from './components/posts/posts.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -28,13 +28,14 @@ import { ProfileComponent } from './components/profile/profile.component';
     SignupComponent,
     LoginComponent,
     PostsComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@
 <div class="container-fluid" style="padding: 0; margin: 0;">
   <div class="vacant-cards">
     <div class="card" style="width: 22rem;" *ngFor="let hood of hoods">
-      <img src="/assets/images/hudu2.jpg" class="card-img-top" alt="...">
+      <img src="{{hood.hood_image}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ hood.name }}</h5>
         <h6 class="card-subtitle mb-2">{{ hood.location }}</h6>
