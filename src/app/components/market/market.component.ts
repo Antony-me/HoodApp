@@ -10,6 +10,7 @@ import { PostService } from 'src/app/post.service';
 
 export class MarketComponent implements OnInit {
   businesses=[];
+  businessLocations=[];
   newBusiness;
   
 
@@ -27,6 +28,7 @@ export class MarketComponent implements OnInit {
 
     }   
     this.getBusiness();
+    this.getBusinessLocation();
 
   }
 
@@ -34,7 +36,18 @@ export class MarketComponent implements OnInit {
     this.PostService.getAllPosts().subscribe(
       data => {
         this.businesses = data[0].business_set;
-        console.log(this.businesses);
+        // console.log(this.businesses);
+      },
+      err => console.error(err),
+      () => console.log('done loading posts')
+    );
+  }
+
+  getBusinessLocation() {
+    this.PostService.getAllPosts().subscribe(
+      data => {
+        this.businessLocations = data[0].name;
+        console.log(this.businessLocations);
       },
       err => console.error(err),
       () => console.log('done loading posts')
