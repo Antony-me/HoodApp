@@ -36,11 +36,7 @@ const routes: Routes = [
     path:'posts',
     component:PostsComponent
   },
-  {
-    path:'profile',
-    component:ProfileComponent,
-    canActivate: [AuthGuard]
-  },
+
 ];
 
 @NgModule({
