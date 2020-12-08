@@ -26,13 +26,13 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="#">CONTACT US</a>
                 </li>
-                <li class="nav-item" *ngIf="!isLoggedIn">
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/signup"><button>Sign up</button></a>
                 </li>
-                <li class="nav-item" *ngIf="!isLoggedIn">
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/login"><button>Log In</button></a>
                 </li>
-                <li class="nav-item dropdown" *ngIf="isLoggedIn">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         &nbsp;<img src="../../../assets/images/avatar.jpeg" alt="profile-photo">
